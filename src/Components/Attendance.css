@@ -1,0 +1,21 @@
+.attend-logo {
+  position: absolute;
+  left: 56px;
+  top: 49px;
+}
+.attendence {
+  width: 480px;
+  height: 72px;
+
+  background: #1678cb;
+  border-radius: 5px;
+}
+.attendance-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 42px;
+
+  color: #ffffff;
+}
