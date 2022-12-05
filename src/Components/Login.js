@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import banner from "../assets/banner.png";
 import logo from "../assets/logo.png";
@@ -21,6 +22,9 @@ const Login = () => {
     })
       .then((res) => res.json())
       .then((data) => {
+        if (data.access_token) {
+          toast.success("login successfull");
+        }
         localStorage.setItem("access_token", data.access_token);
         localStorage.setItem("refresh_token", data.refresh_token);
         navigate("/attendence");

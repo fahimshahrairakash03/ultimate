@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import banner from "../assets/banner.png";
 import logo from "../assets/logo.png";
@@ -20,7 +21,12 @@ const SignUp = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        if (data.sucess === "user added suceesfully") {
+          toast.success("user created successfully");
+        }
+      });
   };
 
   return (
